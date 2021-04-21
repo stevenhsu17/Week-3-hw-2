@@ -1,0 +1,56 @@
+
+R version 4.0.5 (2021-03-31) -- "Shake and Throw"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> save.image("C:\\Users\\ASUS\\Desktop\\Coursera\\makeCacheMatrix.R")
+> source("makeCacheMatrix.R")
+> pmatrix <- makeCacheMatrix(matrix(1:16), nrow=4, ncol=4) :
++ 
++ pmatrix <- makeCacheMatrix
+Error in makeCacheMatrix(matrix(1:16), nrow = 4, ncol = 4):pmatrix <- makeCacheMatrix : 
+  target of assignment expands to non-language object
+> pmatrix <- makeCacheMatrix(matrix(1:16, nrow=4, ncol=4)) 
+> pmatrix$get()
+     [,1] [,2] [,3] [,4]
+[1,]    1    5    9   13
+[2,]    2    6   10   14
+[3,]    3    7   11   15
+[4,]    4    8   12   16
+> pmatrix$getInverse()
+NULL
+> pmatrix <- makeCacheMatrix(matrix(1:4, nrow=2, ncol=2))
+> pmatrix$get()
+     [,1] [,2]
+[1,]    1    3
+[2,]    2    4
+> pmatrix$getInverse()
+NULL
+> cachesolve(pmatrix)
+     [,1] [,2]
+[1,]   -2  1.5
+[2,]    1 -0.5
+> cachesolve(pmatrix)
+getting cached data
+     [,1] [,2]
+[1,]   -2  1.5
+[2,]    1 -0.5
+> pmatrix$getInverse()
+     [,1] [,2]
+[1,]   -2  1.5
+[2,]    1 -0.5
+> 
